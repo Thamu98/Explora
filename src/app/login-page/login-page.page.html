@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" class="background">
+ 
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <ion-form class="box">
+                    <h1>Admin Login</h1><br>
+                    <!-- <p class="text-white"> Please enter your login and password!</p>  -->
+                    <ion-input type="text" class="border text-white"  [(ngModel)]="email" placeholder="Username"></ion-input><br>
+                     <ion-input type="password" class="border text-white" [(ngModel)]="pass" placeholder="Password"></ion-input><br>
+                      
+                      <ion-button class="color" color="light"expand="block" (click)="store(email , pass)">Login</ion-button>
+                </ion-form>
+            </div>
+        </div>
+    </div>
+</div>
+</ion-content>

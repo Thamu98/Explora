@@ -1,27 +1,23 @@
-#container {
-  text-align: center;
+.size12{
+  width: 250px;
+  height: 100px;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  background: rgb(193, 236, 173);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.size13{
+  width: 250px;
+  height: 100px;
+
+  background: rgb(236, 232, 173);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.size14{
+  width: 250px;
+  height: 100px;
 
-  color: #8c8c8c;
-
-  margin: 0;
+  background: rgb(236, 175, 173);
 }
-
-#container a {
-  text-decoration: none;
+.font{
+  font-family: 'Times New Roman', Times, serif;
 }

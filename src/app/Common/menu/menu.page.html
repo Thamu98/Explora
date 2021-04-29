@@ -1,0 +1,90 @@
+<ion-app>
+  <ion-split-pane content-id="main">
+  <ion-menu  side="start" content-id="main" class="menucss">
+    <ion-header >
+      <ion-toolbar translucent >
+        <!-- <ion-title class="font">EXPLORA</ion-title> -->
+        <div style="display: flex;justify-content: space-around;">
+          <img src="/assets/image/Explora.png" class="img-responsive pt-2" style="width: 10em;height: 4em;"> 
+        </div>
+
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+
+      <ion-list>
+
+          <ion-item (click)="home()" lines="none" style="cursor: pointer;">
+            <ion-icon name="home" slot="start" color="light"  ></ion-icon>
+            <ion-label class="font" >HOME</ion-label>
+          </ion-item>
+
+        <ion-item (click)="categories()" lines="none" style="cursor: pointer;">
+          <ion-icon name="grid" slot="start"  color="light" ></ion-icon>         
+          <ion-label class="font">CATEGORIES</ion-label>
+        </ion-item>
+
+
+        <ion-item (click)="subcatogorty()" lines="none" style="cursor: pointer;">
+          <ion-icon name="duplicate" slot="start"  color="light" ></ion-icon>          
+          <ion-label class="font" >SUB-CATOGORY</ion-label>
+        </ion-item>
+
+        <ion-item (click)="productdetails()" lines="none" style="cursor: pointer;">
+          <ion-icon name="cart" slot="start"  color="light" ></ion-icon>       
+          <ion-label class="font" >PRODUCT DETAILS</ion-label>
+
+
+        </ion-item>
+
+        <ion-item (click)="stockdetails()" lines="none" style="cursor: pointer;">
+          <ion-icon name="stats-chart" slot="start"  color="light" ></ion-icon>         
+          <ion-label class="font">STOCK DETAILS</ion-label>
+        </ion-item>
+
+        <ion-item (click)="notification()" lines="none" style="cursor: pointer;">
+          <ion-icon name="notifications" slot="start"  color="light"  ></ion-icon>         
+         <ion-label class="font">NOTIFICATION</ion-label>
+        </ion-item>
+
+        
+        <ion-item (click)="specialuserreq()" lines="none" style="cursor: pointer;">
+          <ion-icon name="person-add" slot="start"  color="light" ></ion-icon>       
+         <ion-label class="font">SPECIAL USER REQUEST</ion-label>
+        </ion-item>
+
+        <ion-item (click)="specialuser()" lines="none" style="cursor: pointer;">
+          <ion-icon name="person" slot="start"  color="light" ></ion-icon>         
+         <ion-label class="font">SPECIAL USERS</ion-label>
+        </ion-item>
+
+
+        <ion-item (click)="discount()" lines="none" style="cursor: pointer;">
+          <ion-icon name="pricetags" slot="start"  color="light" ></ion-icon>          
+         <ion-label class="font">DISCOUNT DETAILS</ion-label>
+        </ion-item>
+
+
+        <ion-item (click)="ordertracking()" lines="none" style="cursor: pointer;">
+          <ion-icon name="trail-sign" slot="start"  color="light" ></ion-icon>      
+         <ion-label class="font">ORDER TRACKING</ion-label>
+        </ion-item>
+
+
+        <ion-item (click)="logout()" lines="none" style="cursor: pointer;">
+          <ion-icon name="log-out" slot="start"  color="light" ></ion-icon>        
+         <ion-label class="font">LOGOUT</ion-label>
+        </ion-item>
+
+      </ion-list>
+      
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+</ion-split-pane>
+</ion-app>
+
+
+
