@@ -34,7 +34,7 @@ export class MenuPage implements OnInit {
     this.navCtrl.navigateForward('/menu/categories');
   }
   subcatogorty(){
-    this.subcatogorty1="SUBCATEGORIES"
+    this.subcatogorty1="SUB-CATEGORIES"
     localStorage.setItem('name',JSON.stringify(this.subcatogorty1));
     this.navCtrl.navigateForward('/menu/sub-catogory');
   }

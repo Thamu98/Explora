@@ -94,11 +94,13 @@ export class HomePage {
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data, options);
 
-      var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
-      chart1.draw(data, options);
+    
 
       var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
       chart2.draw(data, options);
+
+      var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+      chart1.draw(data, options);
     }
 
 
@@ -138,11 +140,13 @@ export class HomePage {
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data, options);
 
-      var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
-      chart1.draw(data, options);
+   
 
       var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
       chart2.draw(data, options);
+
+      var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+      chart1.draw(data, options);
     }
 
 
@@ -182,11 +186,13 @@ export class HomePage {
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data, options);
 
-      var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
-      chart1.draw(data, options);
+    
 
       var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
       chart2.draw(data, options);
+
+      var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+      chart1.draw(data, options);
     }
 
 

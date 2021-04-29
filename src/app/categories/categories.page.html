@@ -1,4 +1,25 @@
 <app-header></app-header>
 
 <ion-content>
+<!-- <ion-label >Category</ion-label> -->
+
+
+
+<ion-grid>
+    <ion-row>
+        <ion-col class="pt-5">
+            <ion-item class="border" lines="none">
+                <ion-input placeholder="Category" type="text" [(ngModel)]="Category" ></ion-input>
+                <ion-input placeholder="Category" type="file" [(ngModel)]="Image" ></ion-input>
+            </ion-item>
+          
+        </ion-col>
+     
+    </ion-row>
+    <ion-row >
+            <ion-button (click)="addCategory()" shape="round">+ Add Category</ion-button>
+    </ion-row>
+</ion-grid>
+
+ 
 </ion-content>

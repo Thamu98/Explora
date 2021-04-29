@@ -2,5 +2,66 @@
 
 
 <ion-content>
-
+    <ion-grid>
+        <ion-row>
+            <ion-col class="pt-5">
+                <ion-item>
+                    <ion-label> Select Category </ion-label>
+                    <ion-select interface="popover" mode='ios'>
+                        <ion-select-option>Covid Care</ion-select-option>
+                        <ion-select-option>Home Care</ion-select-option>
+                        <ion-select-option>Kids Care</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label> Select Subcategory </ion-label>
+                    <ion-select interface="popover" mode='ios'>
+                        <ion-select-option>Covid Care</ion-select-option>
+                        <ion-select-option>Home Care</ion-select-option>
+                        <ion-select-option>Kids Care</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+            
+        </ion-row><br>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Product Name</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Product Price</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Description</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Stock</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row >
+                <ion-button (click)="addProduct()" shape="round">+ Add product</ion-button>
+        </ion-row>
+    </ion-grid>
 </ion-content>
