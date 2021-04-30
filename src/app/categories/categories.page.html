@@ -17,9 +17,31 @@
      
     </ion-row>
     <ion-row >
-            <ion-button (click)="addCategory()" shape="round">+ Add Category</ion-button>
+        <ion-col  size="12">
+            <div class="ion-text-center">
+                <ion-button (click)="addCategory()" shape="round" class="clr">+ Add Category</ion-button>
+            </div>    
+        </ion-col>
+        
+            
     </ion-row>
 </ion-grid>
+<ion-grid>
+    <ion-row>
+        <ion-col size="5" offset="1" *ngFor="let item of catdata">
+            <ion-card style="width: 400px;">
+                <ion-item>
+                    <h2>Category Name  :</h2> &nbsp; &nbsp; &nbsp;
+                    <h3>{{item.cat_name}}</h3>
+                </ion-item>
+            <img src="{{item.cat_image}}" style="height: 150px;width: 300px; padding-left: 100px;">
+            
+            
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
 
  
 </ion-content>

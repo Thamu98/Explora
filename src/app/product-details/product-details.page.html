@@ -6,11 +6,11 @@
         <ion-row>
             <ion-col class="pt-5">
                 <ion-item>
-                    <ion-label> Select Category </ion-label>
+                    <ion-label> Choose Category </ion-label>
                     <ion-select interface="popover" mode='ios'>
-                        <ion-select-option>Covid Care</ion-select-option>
-                        <ion-select-option>Home Care</ion-select-option>
-                        <ion-select-option>Kids Care</ion-select-option>
+                        <ion-select-option  *ngFor="let item of catdata">{{item.cat_name}}</ion-select-option>
+                        <!-- <ion-select-option>Home Care</ion-select-option>
+                        <ion-select-option>Kids Care</ion-select-option> -->
                     </ion-select>
                 </ion-item>
             </ion-col>
@@ -18,11 +18,11 @@
         <ion-row>
             <ion-col>
                 <ion-item>
-                    <ion-label> Select Subcategory </ion-label>
+                    <ion-label> Choose Subcategory </ion-label>
                     <ion-select interface="popover" mode='ios'>
-                        <ion-select-option>Covid Care</ion-select-option>
-                        <ion-select-option>Home Care</ion-select-option>
-                        <ion-select-option>Kids Care</ion-select-option>
+                        <ion-select-option *ngFor="let item of subcatdata">{{item.subcategory_name}}</ion-select-option>
+                        <!-- <ion-select-option>Home Care</ion-select-option>
+                        <ion-select-option>Kids Care</ion-select-option> -->
                     </ion-select>
                 </ion-item>
             </ion-col>
@@ -61,7 +61,12 @@
             </ion-col>
         </ion-row>
         <ion-row >
-                <ion-button (click)="addProduct()" shape="round">+ Add product</ion-button>
+            <ion-col size="12">
+                <div class="ion-text-center">
+                    <ion-button (click)="addProduct()" shape="round" class="clr">+ Add product</ion-button>
+                </div>
+            </ion-col>
+               
         </ion-row>
     </ion-grid>
 </ion-content>

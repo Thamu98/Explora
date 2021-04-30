@@ -9,9 +9,8 @@
                 <ion-item>
                     <ion-label> Select Category </ion-label>
                     <ion-select interface="popover" mode='ios'>
-                        <ion-select-option>Covid Care</ion-select-option>
-                        <ion-select-option>Home Care</ion-select-option>
-                        <ion-select-option>Kids Care</ion-select-option>
+                        <ion-select-option *ngFor="let item of catdata">{{item.cat_name}}</ion-select-option>
+                       
                     </ion-select>
                 </ion-item>
             </ion-col>
@@ -25,7 +24,12 @@
             </ion-col>
         </ion-row>
         <ion-row >
-                <ion-button (click)="addsubCategory()" shape="round">+ Add SubCategory</ion-button>
+            <ion-col size="12">
+                <div class="ion-text-center">
+                    <ion-button (click)="addsubCategory()" shape="round" class="clr">+ Add SubCategory</ion-button>
+                </div>
+            </ion-col>
+               
         </ion-row>
     </ion-grid>
 </ion-content>

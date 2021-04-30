@@ -11,6 +11,9 @@ export class HomePage {
 
   constructor() { }
   ngOnInit() {
+
+
+
     this.change();
     // if (this.Select == "HomeCare") {
 
