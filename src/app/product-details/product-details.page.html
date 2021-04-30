@@ -7,10 +7,9 @@
             <ion-col class="pt-5">
                 <ion-item>
                     <ion-label> Choose Category </ion-label>
-                    <ion-select interface="popover" mode='ios'>
+                    <ion-select interface="popover" mode='ios'[(ngModel)]="productcategory">
                         <ion-select-option  *ngFor="let item of catdata">{{item.cat_name}}</ion-select-option>
-                        <!-- <ion-select-option>Home Care</ion-select-option>
-                        <ion-select-option>Kids Care</ion-select-option> -->
+                        
                     </ion-select>
                 </ion-item>
             </ion-col>
@@ -19,36 +18,81 @@
             <ion-col>
                 <ion-item>
                     <ion-label> Choose Subcategory </ion-label>
-                    <ion-select interface="popover" mode='ios'>
+                    <ion-select interface="popover" mode='ios' [(ngModel)]="productsubcategory">
                         <ion-select-option *ngFor="let item of subcatdata">{{item.subcategory_name}}</ion-select-option>
-                        <!-- <ion-select-option>Home Care</ion-select-option>
-                        <ion-select-option>Kids Care</ion-select-option> -->
+                     
                     </ion-select>
                 </ion-item>
             </ion-col>
             
-        </ion-row><br>
+        </ion-row>
         <ion-row>
             <ion-col>
                 <ion-item>
-                    <ion-label position="floating">Product Name</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-label position="floating">Sub Category Id</ion-label>
+                    <ion-input [(ngModel)]="subcategoryid" type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>
                 <ion-item>
-                    <ion-label position="floating">Product Price</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-label position="floating">Product Name</ion-label>
+                    <ion-input [(ngModel)]="productsubcategory" type="text"></ion-input>
                 </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">MRP</ion-label>
+                    <ion-input [(ngModel)]="mrp" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Normal Price</ion-label>
+                    <ion-input [(ngModel)]="normalprice" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Special Price</ion-label>
+                    <ion-input [(ngModel)]="specialprice" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Offer</ion-label>
+                    <ion-input [(ngModel)]="offer" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Product Image</ion-label>
+
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-input [(ngModel)]="image" type="file"></ion-input>
+                </ion-item>
+           
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">Description</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input [(ngModel)]="description" type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -56,14 +100,54 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">Stock</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input [(ngModel)]="stock" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Brand</ion-label>
+                    <ion-input [(ngModel)]="brand" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Expire Date</ion-label>
+                    <ion-input [(ngModel)]="expiredate" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Rating</ion-label>
+                    <ion-input  [(ngModel)]="rating"  type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">How To Use</ion-label>
+                    <ion-input  [(ngModel)]="howtouse"  type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Package Content</ion-label>
+                    <ion-input  [(ngModel)]="packagecontent"  type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
         <ion-row >
             <ion-col size="12">
                 <div class="ion-text-center">
-                    <ion-button (click)="addProduct()" shape="round" class="clr">+ Add product</ion-button>
+                    <ion-button (click)="addProduct(productcategory,productsubcategory,productname,subcategoryid,description,expiredate,brand,mrp,normalprice,specialprice,offer,image,stock,rating,howtouse,packagecontent)" shape="round" class="clr">+ Add product</ion-button>
                 </div>
             </ion-col>
                

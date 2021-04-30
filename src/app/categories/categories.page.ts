@@ -19,7 +19,13 @@ export class CATEGORIESPage implements OnInit {
 
   ngOnInit() {
   }
-
+  addCategory(Category,Image){
+    var server={Category,Image}
+    var url="https://explora1.loca.lt/api/category"
+    this.http.post(url,server).subscribe(res =>{
+    console.log(res);
+    })
+  }
 
 
 }

@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'order-tracking',
     loadChildren: () => import('../../order-tracking/order-tracking.module').then( m => m.ORDERTRACKINGPageModule)
   },
+    {
+    path: 'view-products',
+    loadChildren: () => import('../../view-products/view-products.module').then( m => m.ViewProductsPageModule)
+  },
 
   {
     path: '',

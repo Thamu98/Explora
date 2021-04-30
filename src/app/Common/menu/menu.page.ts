@@ -18,6 +18,7 @@ export class MenuPage implements OnInit {
   specialuser1: string;
   discount1: string;
   ordertracking1: string;
+  viewproduct: string;
 
   constructor(public navCtrl:NavController,public popoverController: PopoverController) { }
 
@@ -42,6 +43,11 @@ export class MenuPage implements OnInit {
     this.productdetails1="PRODUCT DETAILS"
     localStorage.setItem('name',JSON.stringify(this.productdetails1));
     this.navCtrl.navigateForward('/menu/product-details');
+  }
+  viewproducts(){
+    this.viewproduct="VIEW PRODUCT DETAILS"
+    localStorage.setItem('name',JSON.stringify(this.viewproduct));
+    this.navCtrl.navigateForward('/menu/view-products');
   }
   stockdetails(){
     this.stockdetails1="STOCK DETAILS"

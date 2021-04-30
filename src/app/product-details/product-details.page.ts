@@ -26,4 +26,12 @@ export class PRODUCTDETAILSPage implements OnInit {
 
   }
 
+  addProduct(productcategory,productsubcategory,productname,subcategoryid,description,expiredate,brand,mrp,normalprice,specialprice,offer,image,stock,rating,howtouse,packagecontent){
+    var data={productcategory,productsubcategory,productname,subcategoryid,description,expiredate,brand,mrp,normalprice,specialprice,offer,image,stock,rating,howtouse,packagecontent}
+    var url="https://explora1.loca.lt/productlist"
+    this.http.post(url,data).subscribe(res =>{
+      console.log(res);
+    })
+  }
+
 }

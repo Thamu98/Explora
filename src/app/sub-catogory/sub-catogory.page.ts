@@ -19,5 +19,11 @@ export class SUBCATOGORYPage implements OnInit {
 
   ngOnInit() {
   }
-
+  addsubCategory(Subcategory,Catname){
+    var data={ Subcategory,Catname}
+    var url="https://explora1.loca.lt/api/subcategory"
+    this.http.post(url,data).subscribe(res =>{
+      console.log(res);
+    })
+  }
 }
