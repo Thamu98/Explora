@@ -7,9 +7,9 @@
             <ion-col class="pt-5">
                 <ion-item>
                     <ion-label> Choose Category </ion-label>
-                    <ion-select interface="popover" mode='ios' [value]="c1" [selected]="c1" (ionChange)="CategoryValue(cat)" [(ngModel)]="cat">
-                        <ion-select-option [value]="cat.cat_id" *ngFor="let cat of catdata">
-                            {{item.cat_name}}</ion-select-option>
+                    <ion-select interface="popover" mode='ios' [(ngModel)]="cat">
+                        <ion-select-option value="{{cat.cat_name}}" *ngFor="let cat of catdata">{{cat.cat_name}}</ion-select-option>
+                            
                     </ion-select>
                 </ion-item>
 
@@ -27,21 +27,22 @@
             <ion-col class="pt-5">
                 <ion-item >
                     <ion-label> Choose Subcategory </ion-label>
-                    <ion-select interface="popover" mode='ios' [value]="sub" [selected]="sub" [(ngModel)]="items">
-                                    <ion-select-option [value]="items.cat_id" *ngFor="let items of subcatdata">{{item.subcategory_name}}
-                                    </ion-select-option>
+                    <ion-select interface="popover" mode='ios' [(ngModel)]="items">
+                                    <ion-select-option value="{{items.subcategory_name}}" *ngFor="let items of subcatdata">{{items.subcategory_name}} </ion-select-option>
+                                   
                     </ion-select>
+                  
                 </ion-item>
 
 
-                <ion-item>
+                <!-- <ion-item>
                     <ion-label>Select sub-category</ion-label>
                     <ion-select interface="popover" [value]="s1" [selected]="s1" [(ngModel)]="sSubCat"
                       formControlName="SubCategory_id">
                       <ion-select-option [value]="sSubCat.SubCategory_id" *ngFor="let sSubCat of selectedCategory">
                         {{sSubCat.SubCategory}}</ion-select-option>
                     </ion-select>
-                  </ion-item>
+                  </ion-item> -->
 
             </ion-col>
         </ion-row>
@@ -115,7 +116,43 @@
         <ion-row>
             <ion-col>
                 <ion-item>
-                    <ion-label>Product Image</ion-label>
+                    <ion-label>Top View</ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-input [(ngModel)]="image" type="file"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Front View</ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-input [(ngModel)]="image" type="file"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Rear View</ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-input [(ngModel)]="image" type="file"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Side View</ion-label>
                 </ion-item>
             </ion-col>
             <ion-col>

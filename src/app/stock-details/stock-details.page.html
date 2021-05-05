@@ -3,4 +3,59 @@
 
 <ion-content>
 
+    <ion-grid>
+        <ion-row>
+            <ion-col class="pt-5">
+                <ion-item>
+                    <ion-label> Choose Category </ion-label>
+                    <ion-select interface="popover" mode='ios' [(ngModel)]="cat">
+                        <ion-select-option *ngFor="let cat of catdata"> {{cat.cat_name}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+            </ion-col>
+            <ion-col class="pt-5">
+                <ion-item >
+                    <ion-label> Choose Subcategory </ion-label>
+                    <ion-select interface="popover" mode='ios' [(ngModel)]="items">
+                                    <ion-select-option *ngFor="let items of subcatdata">{{items.subcategory_name}} </ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <ion-row>
+
+        <ion-col>
+            <div class="table-responsive container">
+              <table  >
+                <tr class="border">
+                  <th><h4><b>Product Id</b></h4></th>
+                  <th><h4><b>Product Name</b></h4></th>
+                  <th><h4><b>Stock</b></h4></th>
+                  <th><h4><b>Add Stock</b></h4></th>
+                  <th><h4><b>Invoice_No</b></h4></th>
+                  <th><h4><b>Submit</b></h4></th>
+                
+                </tr>
+                <tr *ngFor="let item of data" class="border">
+                  <td>{{item.product_id}}</td>
+                  <td>{{item.product_name}}</td>
+                  <td>{{item.stock}}</td>
+                  <td ><ion-input [(ngModel)]='stock_count' type="number" placeholder="Enter Stock Value"></ion-input></td>
+                  <td ><ion-input [(ngModel)]='invoiceNo' type="number" placeholder="Enter Invoice_No"></ion-input></td>
+
+                  <td><ion-button color="secondary" (click)='stock(item)'>Submit</ion-button></td>
+                 
+    
+                </tr>
+    
+              </table>
+    
+            </div>
+
+        </ion-col>
+      </ion-row>
 </ion-content>

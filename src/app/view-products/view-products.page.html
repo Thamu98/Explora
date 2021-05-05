@@ -2,15 +2,20 @@
 
 <ion-content>
   
-<ion-item class="container">
-
-    
-    <h6><b>Filter By Offers</b></h6>
-    <ion-select interface='popover' mode='ios' (ionChange)='filter(search)' [(ngModel)]="search">
-      <ion-select-option  *ngFor="let offer of offerData" value="{{offer.offer_percentage}}" >{{offer.offer_percentage}}</ion-select-option>      
-    </ion-select>
- 
-</ion-item>
+<!-- <ion-item > -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size=12>
+        <ion-item>
+          <h6><b>Filter By Offers</b></h6>
+          <ion-select interface='popover' mode='ios' (ionChange)='filter(search)' [(ngModel)]="search">
+            <ion-select-option  *ngFor="let offer of offerData" value="{{offer.offer_percentage}}" >{{offer.offer_percentage}}</ion-select-option>      
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<!-- </ion-item> -->
     <ion-row>
 
         <ion-col>
