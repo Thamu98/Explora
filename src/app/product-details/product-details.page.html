@@ -7,24 +7,43 @@
             <ion-col class="pt-5">
                 <ion-item>
                     <ion-label> Choose Category </ion-label>
-                    <ion-select interface="popover" mode='ios'[(ngModel)]="productcategory">
-                        <ion-select-option  *ngFor="let item of catdata">{{item.cat_name}}</ion-select-option>
-                        
+                    <ion-select interface="popover" mode='ios' [value]="c1" [selected]="c1" (ionChange)="CategoryValue(cat)" [(ngModel)]="cat">
+                        <ion-select-option [value]="cat.cat_id" *ngFor="let cat of catdata">
+                            {{item.cat_name}}</ion-select-option>
                     </ion-select>
                 </ion-item>
+
+                <!-- <ion-item>
+                    <ion-label>Select Category</ion-label>
+                    <ion-select interface="popover" [value]="c1" [selected]="c1" (ionChange)="setCategoryValues(sCat)"
+                      [(ngModel)]="sCat" formControlName="Category_name">
+                      <ion-select-option [value]="sCat.cat_id" *ngFor="let sCat of categoryList">{{sCat.Category}}
+                      </ion-select-option>
+                    </ion-select>
+                  </ion-item> -->
+
+
             </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-item>
+            <ion-col class="pt-5">
+                <ion-item >
                     <ion-label> Choose Subcategory </ion-label>
-                    <ion-select interface="popover" mode='ios' [(ngModel)]="productsubcategory">
-                        <ion-select-option *ngFor="let item of subcatdata">{{item.subcategory_name}}</ion-select-option>
-                     
+                    <ion-select interface="popover" mode='ios' [value]="sub" [selected]="sub" [(ngModel)]="items">
+                                    <ion-select-option [value]="items.cat_id" *ngFor="let items of subcatdata">{{item.subcategory_name}}
+                                    </ion-select-option>
                     </ion-select>
                 </ion-item>
+
+
+                <ion-item>
+                    <ion-label>Select sub-category</ion-label>
+                    <ion-select interface="popover" [value]="s1" [selected]="s1" [(ngModel)]="sSubCat"
+                      formControlName="SubCategory_id">
+                      <ion-select-option [value]="sSubCat.SubCategory_id" *ngFor="let sSubCat of selectedCategory">
+                        {{sSubCat.SubCategory}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+
             </ion-col>
-            
         </ion-row>
         <ion-row>
             <ion-col>
@@ -38,7 +57,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">Product Name</ion-label>
-                    <ion-input [(ngModel)]="productsubcategory" type="text"></ion-input>
+                    <ion-input [(ngModel)]="productname" type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -68,24 +87,41 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-item>
-                    <ion-label position="floating">Offer</ion-label>
-                    <ion-input [(ngModel)]="offer" type="text"></ion-input>
-                </ion-item>
+                <ion-radio-group [(ngModel)]="select">
+                    <ion-item>
+                        <ion-label>Offer</ion-label>
+                        <ion-item>
+                            <ion-label>Yes</ion-label>
+                            <ion-radio value="yes">Yes</ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>No</ion-label>
+                            <ion-radio value="no">No</ion-radio>
+                        </ion-item>
+                        <ion-item *ngIf="select=='yes'">
+                            <ion-select interface="popover" mode='ios' [(ngModel)]="offer">
+                                <ion-select-option value="{{offer.offer_percentage}}" *ngFor="let offer of offerData">{{offer.offer_percentage}}</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-item>
+                   
+                </ion-radio-group>
+
+
+
+
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>
                 <ion-item>
                     <ion-label>Product Image</ion-label>
-
                 </ion-item>
             </ion-col>
             <ion-col>
                 <ion-item>
                     <ion-input [(ngModel)]="image" type="file"></ion-input>
                 </ion-item>
-           
             </ion-col>
         </ion-row>
         <ion-row>
@@ -115,8 +151,12 @@
         <ion-row>
             <ion-col>
                 <ion-item>
-                    <ion-label position="floating">Expire Date</ion-label>
-                    <ion-input [(ngModel)]="expiredate" type="text"></ion-input>
+                    <ion-label>Expire Date</ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-input [(ngModel)]="expiredate" type="date"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -124,7 +164,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">Rating</ion-label>
-                    <ion-input  [(ngModel)]="rating"  type="text"></ion-input>
+                    <ion-input [(ngModel)]="rating" type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -132,7 +172,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">How To Use</ion-label>
-                    <ion-input  [(ngModel)]="howtouse"  type="text"></ion-input>
+                    <ion-input [(ngModel)]="howtouse" type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -140,17 +180,18 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">Package Content</ion-label>
-                    <ion-input  [(ngModel)]="packagecontent"  type="text"></ion-input>
+                    <ion-input [(ngModel)]="packagecontent" type="text"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
-        <ion-row >
+        <ion-row>
             <ion-col size="12">
                 <div class="ion-text-center">
-                    <ion-button (click)="addProduct(productcategory,productsubcategory,productname,subcategoryid,description,expiredate,brand,mrp,normalprice,specialprice,offer,image,stock,rating,howtouse,packagecontent)" shape="round" class="clr">+ Add product</ion-button>
+                    <ion-button
+                        (click)="addProduct(productcategory,productsubcategory,subcategoryid,productname,description,expiredate,brand,mrp,normalprice,specialprice,productoffer,image,stock,rating,howtouse,packagecontent)"
+                        shape="round" class="clr">+ Add product</ion-button>
                 </div>
             </ion-col>
-               
         </ion-row>
     </ion-grid>
 </ion-content>

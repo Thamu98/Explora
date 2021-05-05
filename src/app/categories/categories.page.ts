@@ -10,7 +10,7 @@ export class CATEGORIESPage implements OnInit {
   catdata: any=[];
 
   constructor(private http: HttpClient) {
-    this.http.get("https://explora1.loca.lt/api/category").subscribe(res =>{
+    this.http.get("https://explora.loca.lt/categorys").subscribe(res =>{
       console.log(res);
       this.catdata=res;
       console.log(this.catdata)
@@ -21,7 +21,7 @@ export class CATEGORIESPage implements OnInit {
   }
   addCategory(Category,Image){
     var server={Category,Image}
-    var url="https://explora1.loca.lt/api/category"
+    var url="https://explora.loca.lt/categorys"
     this.http.post(url,server).subscribe(res =>{
     console.log(res);
     })

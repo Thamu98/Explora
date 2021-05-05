@@ -1,26 +1,36 @@
 <app-header></app-header>
 
 <ion-content>
+  
+<ion-item class="container">
+
+    
+    <h6><b>Filter By Offers</b></h6>
+    <ion-select interface='popover' mode='ios' (ionChange)='filter(search)' [(ngModel)]="search">
+      <ion-select-option  *ngFor="let offer of offerData" value="{{offer.offer_percentage}}" >{{offer.offer_percentage}}</ion-select-option>      
+    </ion-select>
+ 
+</ion-item>
     <ion-row>
 
-        <ion-col >
-    
-          <ion-card>
-            <div class="table-responsive">
-              <table>
-                <tr >
-                  <th>Product Id</th>
-                  <th>Product Name</th>
-                  <th>Price</th>
-                  <th>Subcategory Id</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+        <ion-col>
+            <div class="table-responsive container">
+              <table  >
+                <tr class="border">
+                  <th><h4><b>Product Id</b></h4></th>
+                  <th><h4><b>Product Name</b></h4></th>
+                  <th><h4><b>Price</b></h4></th>
+                  <th><h4><b>Offer</b></h4></th>
+                  <th><h4><b>Subcategory Id</b></h4></th>
+                  <th><h4><b>Edit</b></h4></th>
+                  <th><h4><b>Delete</b></h4></th>
                 </tr>
-                <tr *ngFor="let item of data" >
-                  <td>{{item.id}}</td>
-                  <td>{{item.productname}}</td>
+                <tr *ngFor="let item of data" class="border">
+                  <td>{{item.product_id}}</td>
+                  <td>{{item.product_name}}</td>
                   <td>{{item.mrp}}</td>
-                  <td>{{item.subcategoryid}}</td>
+                  <td >{{item.offer}}</td>
+                  <td>{{item.sub_categoryid}}</td>
                   <td><ion-button color="secondary">Edit</ion-button></td>
                   <td><ion-button color="danger">Delete</ion-button></td>
     
@@ -29,10 +39,13 @@
               </table>
     
             </div>
+
+
+
     
     
     
-          </ion-card>
+       
         </ion-col>
       </ion-row>
 </ion-content>
