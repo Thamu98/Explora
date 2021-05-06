@@ -13,6 +13,7 @@ export class STOCKDETAILSPage implements OnInit {
   cat:any;
   stock_count:number;
   invoiceNo:number;
+  subArray: any[];
 
   constructor(private http: HttpClient) { 
     this.http.get("https://explora1.loca.lt/categorys").subscribe(res =>{
@@ -34,6 +35,12 @@ export class STOCKDETAILSPage implements OnInit {
 
   ngOnInit() {
   }
+  select(productcategory){
+    this.subArray = this.subcatdata.filter(e=>e.cat_id === productcategory.cat_id);
+    console.log(this.subArray);
+}
+
+
   stock(item){
     var stock = 'https://explora1.loca.lt/stock';
     let record = {};
@@ -42,7 +49,7 @@ export class STOCKDETAILSPage implements OnInit {
     record['stock_count'] = item.stock + this.stock_count;
     record['user_id'] = 'admin@gmail.com';
     console.log(record);
-    this.http.put<any>(stock,record).subscribe(res=>{
+    this.http.post(stock,record).subscribe(res=>{
       console.log(res);
     })
   }
