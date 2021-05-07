@@ -38,6 +38,7 @@
                   <th><h4><b>Stock</b></h4></th>
                   <th><h4><b>Add Stock</b></h4></th>
                   <th><h4><b>Invoice_No</b></h4></th>
+                  <th><h4><b>Invoice_Image</b></h4></th>
                   <th><h4><b>Submit</b></h4></th>
                 
                 </tr>
@@ -47,10 +48,11 @@
                   <td>{{item.stock}}</td>
                   <td ><ion-input [(ngModel)]='stock_count' type="number" placeholder="Enter Stock Value"></ion-input></td>
                   <td ><ion-input [(ngModel)]='invoiceNo' type="number" placeholder="Enter Invoice_No"></ion-input></td>
+                  <td ><input type="file" (change)="onFileChange($event)"/></td>
 
-                  <td><ion-button color="secondary" (click)='stock(item)'>Submit</ion-button></td>
+                  <td><ion-button color="secondary" (click)='stock(item)' >Submit</ion-button></td>
                  
-    
+                  
                 </tr>
     
               </table>

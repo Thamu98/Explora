@@ -13,19 +13,19 @@ export class ViewProductsPage implements OnInit {
   offerData: any=[];
 
   constructor(private http:HttpClient) {
-this.http.get("https://explora1.loca.lt/productlist").subscribe(res =>{
+this.http.get("https://explora.loca.lt/productlist").subscribe(res =>{
   this.data=res;
   console.log(this.data);
 })
 
-this.http.get("https://explora1.loca.lt/offers").subscribe(res=>{
+this.http.get("https://explora.loca.lt/offers").subscribe(res=>{
   this.offerData=res;
   console.log(this.offerData);
 })
   }
 filter(search){
   console.log(search);
-  this.http.get("https://explora1.loca.lt/productlist").subscribe(res => {
+  this.http.get("https://explora.loca.lt/productlist").subscribe(res => {
     // console.log(res);
     this.data1 = res;
     // console.log(this.data1);

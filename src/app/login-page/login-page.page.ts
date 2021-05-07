@@ -20,9 +20,10 @@ export class LoginPagePage implements OnInit {
   async store(){
   
 
-    if(this.email=="Admin" && this.pass=="Admin@123"){
+    if(this.email=="Admin@gmail.com" && this.pass=="Admin@123"){
     
       this.navCtrl.navigateForward('/menu/home');
+      localStorage.setItem('Email',this.email);
       this.email="";
       this.pass="";
     }

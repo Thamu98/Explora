@@ -13,27 +13,24 @@ export class PRODUCTDETAILSPage implements OnInit {
   catname: any;
   items: any;
   catId: any;
-  store: any = [];
+ 
   sub: any = [];
   subArray: any[];
   data = {};
 
 
   constructor(private http: HttpClient) {
-    this.http.get("https://explora1.loca.lt/categorys").subscribe(res => {
+    this.http.get("https://explora.loca.lt/categorys").subscribe(res => {
       // console.log(res);
       this.catdata = res;
       console.log(res);
     })
-    this.http.get("https://explora1.loca.lt/subcategory").subscribe(res => {
+    this.http.get("https://explora.loca.lt/subcategory").subscribe(res => {
       this.subcatdata = res;
       console.log(this.subcatdata);
-      for (var i = 0; i < this.subcatdata.length; i++) {
-        this.store = (this.subcatdata[i].cat_id);
-      }
-      console.log(this.store);
+     
     })
-    this.http.get("https://explora1.loca.lt/offers").subscribe(res => {
+    this.http.get("https://explora.loca.lt/offers").subscribe(res => {
       this.offerData = res;
       console.log(this.offerData);
     })
@@ -47,7 +44,7 @@ export class PRODUCTDETAILSPage implements OnInit {
   }
   addProduct(productcategory, productsubcategory, productname, subcategoryid, description, expiredate, brand, mrp, normalprice, specialprice, offer, image, stock, rating, howtouse, packagecontent) {
     var data = { productcategory, productsubcategory, productname, subcategoryid, description, expiredate, brand, mrp, normalprice, specialprice, offer, image, stock, rating, howtouse, packagecontent }
-    var url = "https://explora1.loca.lt/productlist"
+    var url = "https://explora.loca.lt/productlist"
     this.http.post(url, data).subscribe(res => {
       console.log(res);
     })
